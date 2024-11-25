@@ -1,11 +1,11 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [DashboardController::class, 'show'])->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
